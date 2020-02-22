@@ -80,7 +80,7 @@ export default class CreateNutrition extends Component {
     render() {
         return (
             <div>
-                <h3>Create New Exercise Log</h3>
+                <h3>Create New Nutrition Log</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className='form-group'>
                         <label>Username: </label>
@@ -108,12 +108,12 @@ export default class CreateNutrition extends Component {
                         onChange={this.onChangeDescription} />
                     </div>
                     <div className='form-group'>
-                        <label>Duration (in minutes): </label>
+                        <label>Calories (in kCal): </label>
                         <input type='text'
                         required
                         className='form-control'
-                        value={this.state.duration}
-                        onChange={this.onChangeDuration} />
+                        value={this.state.calories}
+                        onChange={this.onChangeCalories} />
                     </div>
                     <div className='form-group'>
                         <label>Date: </label>

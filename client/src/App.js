@@ -16,11 +16,11 @@ function App() {
       <div className="container">
         <Navbar />
         <br />
-        <Route path='/' exact component={ExercisesList} />
+        <Route path='/exercises' exact component={ExercisesList} />
         <Route path='/edit/:id' exact component={EditExercise} />
         <Route path='/create' exact component={CreateExercise} />
         <Route path='/user' exact component={CreateUser} />
-        <Route path='nutrition' exact component={CreateNutrition} />
+        <Route path='/nutrition' exact component={CreateNutrition} />
       </div>
     </Router>
   );
