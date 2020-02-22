@@ -9,6 +9,8 @@ import EditExercise from './components/edit-exercise.component.js';
 import CreateExercise from './components/create-exercise.component.js';
 import CreateUser from './components/create-user.component.js';
 import CreateNutrition from './components/create-nutrition.component.js';
+import NutritionsList from './components/nutritions-list.component.js';
+import FitnessTracker from './components/fitness-tracker.component.js';
 
 function App() {
   return (
@@ -16,11 +18,13 @@ function App() {
       <div className="container">
         <Navbar />
         <br />
+        <Route path='/' exact component={FitnessTracker} />
         <Route path='/exercises' exact component={ExercisesList} />
         <Route path='/edit/:id' exact component={EditExercise} />
         <Route path='/create' exact component={CreateExercise} />
         <Route path='/user' exact component={CreateUser} />
         <Route path='/nutrition' exact component={CreateNutrition} />
+        <Route path='/nutritions' exact component={NutritionsList} />
       </div>
     </Router>
   );
