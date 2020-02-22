@@ -10,43 +10,43 @@ router.route('/').get((req, res) => {
 router.route('/add').post((req, res) => {
     const username = req.body.username;
     const description = req.body.description;
-    const duration = Number(req.body.duration);
+    const calories = Number(req.body.calories);
     const date = Date.parse(req.body.date);
 
-    const newExercise = new Exercise({
+    const newNutrition = new Nutrition({
         username,
         description,
-        duration,
+        calories,
         date
     });
 
-    newExercise.save()
-    .then(() => res.json('Exercise added!'))
+    newNutrition.save()
+    .then(() => res.json('Nutrition added!'))
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
 router.route('/:id').get((req, res) => {
-    Exercise.findById(req.params.id)
-    .then(exercise => res.json(exercise))
+    Nutrition.findById(req.params.id)
+    .then(nutrition => res.json(nutrition))
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
 router.route('/:id').delete((req, res) => {
-    Exercise.findByIdAndDelete(req.params.id)
-    .then(() => res.json('Exercise deleted.'))
+    Nutrition.findByIdAndDelete(req.params.id)
+    .then(() => res.json('Nutrition deleted.'))
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
 router.route('/update/:id').post((req, res) => {
-    Exercise.findById(req.params.id)
-        .then(exercise => {
-            exercise.username = req.body.username;
-            exercise.description = req.body.description;
-            exercise.duration = Number(req.body.duration);
-            exercise.date = new Date(req.body.date);
+    Nutrition.findById(req.params.id)
+        .then(nutrition => {
+            nutrition.username = req.body.username;
+            nutrition.description = req.body.description;
+            nutrition.calories = Number(req.body.calories);
+            nutrition.date = new Date(req.body.date);
 
-            exercise.save()
-            .then(() => res.json('Exercise updated!'))
+            nutrition.save()
+            .then(() => res.json('Nutrition updated!'))
             .catch(err => res.status(400).json('Error: ' + err));
         })
         .catch(err => res.status(400).json('Error: ' + err));
