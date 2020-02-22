@@ -19,9 +19,11 @@ connection.once('open', () => {
 
 const exercisesRouter = require('./backend/routes/exercise');
 const usersRouter = require('./backend/routes/users');
+const nutritionRouter = require('./backend/routes/nutrition');
 
 app.use('/exercises', exercisesRouter);
 app.use('/users', usersRouter);
+app.use('/nutrition', nutritionRouter);
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
