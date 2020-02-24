@@ -15,13 +15,13 @@ export default class Navbar extends Component {
                             <Link to='/nutritions' className="nav-link">Nutrition Tracker</Link>
                         </li>
                         <li className="navbar-item">
-                            <Link to='/create' className="nav-link">Create Exercise Log</Link>
+                            <Link to='/create' className="nav-link">Log Exercise</Link>
                         </li>
                         <li className="navbar-item">
                             <Link to='/user' className="nav-link">Create User</Link>
                         </li>
                         <li className="navbar-item">
-                            <Link to='/nutrition' className="nav-link">Create Nutrition</Link>
+                            <Link to='/nutrition' className="nav-link">Log Nutrition</Link>
                         </li>
                     </ul>
                 </div>
